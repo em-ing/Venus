@@ -14,12 +14,12 @@ class Tar {
         return words.join("/");
     }
     generate() {
-        let title = this.markov.generate(2);
-        let header = title;
-        let link = this.markov.generate(Math.floor(Math.random() * 10) + 1);
-        let content = this.markov.generate(50);
-        let scriptedcontent = markov.generate(50 + Math.floor(Math.random() * 10))
-        let meta = this.markov.generate(Math.floor(Math.random() * 10));
+        let meta = this.markov.generate(Math.floor(Math.random() * 10) + 7);
+        let len = meta.split(" ").length
+        let header = meta.split(" ").slice(0, 2).join(" ")
+        let title = header
+        let content = meta.split(" ").slice(2, len-5)
+        let scriptedcontent = (len-5, len)
         let next = this._makeRoute()
         return `
             <head>
