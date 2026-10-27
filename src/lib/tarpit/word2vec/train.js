@@ -5,9 +5,6 @@ function randomVector(dim) {
 }
 
 function sigmoid(x) {
-  // 6 or -6 are too wide of a range to be anything but flat
-  if (x > 6) return 1.0;
-  if (x < -6) return 0.0;
   return 1 / (1 + Math.exp(-x));
 }
 
